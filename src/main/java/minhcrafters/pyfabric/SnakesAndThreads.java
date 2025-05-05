@@ -19,19 +19,22 @@ public class SnakesAndThreads implements ModInitializer {
 
     @Override
     public void onInitialize() {
-
         pythonInterpreter = new PythonInterpreter();
 
         LOGGER.info("Hello Fabric world!");
 
-        ServerLifecycleEvents.SERVER_STARTING.register(server -> {
-            pythonInterpreter.start(server);
+        ServerLifecycleEvents.SERVER_STOPPING.register(server -> {
+            LOGGER.info("Server stopping, shutting down Python...");
+            if (pythonInterpreter != null) {
+                pythonInterpreter.close();
+            }
+            minecraftServer = null;
         });
 
-        ServerLifecycleEvents.SERVER_STOPPING.register(server -> {
-            if (pythonInterpreter != null) {
-                pythonInterpreter.shutdown();
-            }
+        ServerLifecycleEvents.SERVER_STARTED.register(server -> {
+            minecraftServer = server;
+            pythonInterpreter.init();
+            LOGGER.info("Server started, MinecraftServer instance captured.");
         });
 
         CommandRegistrationCallback.EVENT.register(Command::register);
