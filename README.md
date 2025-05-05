@@ -5,7 +5,6 @@
 
 The mod integrates GraalPy (GraalVM's Python runtime) into your Minecraft server, allowing server administrators and scripters to automate tasks, add custom game logic, and interact with the Minecraft world using Python.
 
----
 
 ## Table of Contents
 
@@ -22,7 +21,6 @@ The mod integrates GraalPy (GraalVM's Python runtime) into your Minecraft server
 *   [License](#license)
 *   [Contributing](#contributing)
 
----
 
 ## Features
 
@@ -35,7 +33,6 @@ The mod integrates GraalPy (GraalVM's Python runtime) into your Minecraft server
     *   `/pyeval <code>`: Executes a raw string of Python code (requires high permission level).
 *   **Asynchronous Execution:** Scripts run on a separate thread pool to minimize impact on server performance, although API calls interacting with Minecraft often block the script thread until the server thread completes the action.
 
----
 
 ## Requirements
 
@@ -44,7 +41,6 @@ The mod integrates GraalPy (GraalVM's Python runtime) into your Minecraft server
 *   **Fabric API:** Version compatible with Minecraft 1.21.4 (e.g., 0.100.0+).
 *   **Java Runtime Environment (JRE/JDK):** Version 21 or higher. **GraalVM installation is NOT required.**
 
----
 
 ## Installation
 
@@ -54,7 +50,6 @@ The mod integrates GraalPy (GraalVM's Python runtime) into your Minecraft server
 4.  **Install PyFabric:** Place the downloaded PyFabric JAR file into the server's `mods` folder.
 5.  **Start Server:** Launch your Fabric server. On the first run, PyFabric should create its configuration directory.
 
----
 
 ## Usage
 
