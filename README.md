@@ -88,9 +88,6 @@ time.sleep(1.5)
 
 mc.send_chat("Python script says goodbye!")
 mc.log_info("--- Hello Script Finished ---")
-
-# You can optionally return simple values
-# return "Script completed successfully."
 ```
 
 ### Running Scripts (Commands)
@@ -147,7 +144,6 @@ try:
     # BlockPos = java.type('net.minecraft.util.math.BlockPos')
     # pos_obj = BlockPos(0, 64, 0)
     # mc.log_info(f"Created BlockPos object: {pos_obj.toShortString()}")
-
 except Exception as e:
     mc.log_warning(f"Java interop failed: {e}")
 ```
